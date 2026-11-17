@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "project": "15-retention-job",
+  "runtime": { "kind": "node", "minVersion": "22", "dependencies": 0 },
+  "network": { "required": false, "hosts": [] },
+  "secrets": [],
+  "environment": [],
+  "filesystem": [
+    { "scope": "read", "path": "this repository" },
+    { "scope": "write", "path": "in-memory tables only; the caller decides where rows live" }
+  ],
+  "processes": { "spawns": [], "reason": "in-process planner; the CLI is a plain node script" },
+  "github": {
+    "workflowPermissions": { "contents": "read" },
+    "reason": "CI only reads the repository; no writes, no secrets, no packages"
+  },
+  "humanApprovalRequiredFor": [
+    "running applyRetention against production tables",
+    "changing any window in POLICY"
+  ]
+}

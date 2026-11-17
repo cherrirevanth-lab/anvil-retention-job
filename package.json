@@ -1,0 +1,15 @@
+{
+  "name": "@anvil/retention-job",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Policy-driven data retention with a mandatory dry run and referential safety.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test test/",
+    "start": "node src/cli.mjs",
+    "verify": "node verify.mjs"
+  },
+  "keywords": ["retention", "gdpr", "deletion", "dry-run", "node-test"],
+  "license": "MIT"
+}
